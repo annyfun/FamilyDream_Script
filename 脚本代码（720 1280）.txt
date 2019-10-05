@@ -14,12 +14,12 @@ Sub Auto()
 		For INDEX = 1 To 3
 			TracePrint INDEX
 			TouchDown X(INDEX), Y(INDEX)
-			Delay 1000
+			Delay 200
 			Dim IntX,IntY
 			FindColor 0,0,0,0,"80FFFF|81FFFF|80FF00",0,1.0,intX,intY
 			If intX >-1 then
     			Traceprint "找到货物"
-    			TouchMove intX + 50, intY
+    			TouchMove intX + 6, intY + 2
     			Delay 200
 			Else
     			Traceprint "没有货物"
@@ -27,7 +27,7 @@ Sub Auto()
 			TouchUp
 		Next
 		
-		Delay 1000
+		Delay 100
 		TouchDown 201, 813
 		TouchMove 545, 640
 		TouchMove 538, 485
@@ -36,7 +36,7 @@ Sub Auto()
 		TouchMove 538, 314
 		TouchUp
 	
-		Delay 1000
+		Delay 100
 		
 		UPCNT = UPCNT + 1
 		If UPCNT >= 10 Then 
