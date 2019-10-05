@@ -18,11 +18,11 @@ Sub Auto()
 			Dim IntX,IntY
 			FindColor 0,0,0,0,"80FFFF|81FFFF|80FF00",0,1.0,intX,intY
 			If intX >-1 then
-    			Traceprint "ÕÒµ½»õÎï"
+    			Traceprint "æ‰¾åˆ°è´§ç‰©"
     			TouchMove intX + 50, intY
     			Delay 200
 			Else
-    			Traceprint "Ã»ÓĞ»õÎï"
+    			Traceprint "æ²¡æœ‰è´§ç‰©"
 			End If
 			TouchUp
 		Next
@@ -41,36 +41,36 @@ Sub Auto()
 		UPCNT = UPCNT + 1
 		If UPCNT >= 10 Then 
 			UPCNT = 0
-			Call Up(204, 805) //Éı¼¶Ö¸¶¨·¿Îİ
-			Delay 1000
+			// Call Up(204, 805) //å‡çº§æŒ‡å®šæˆ¿å±‹
+			// Delay 1000
 		End If
 	Wend
 End Sub
 
 
 Sub Up(X, Y)
-	Tap 643, 764 //½øÈëÉı¼¶
+	Tap 643, 764 //è¿›å…¥å‡çº§
 	Delay 1000
 	
 	while CmpColor(697, 770, "4DDDFF", 1.0) < 0
-		Traceprint "µÈ´ı½øÈëÉı¼¶Ò³Ãæ"
+		Traceprint "ç­‰å¾…è¿›å…¥å‡çº§é¡µé¢"
 		Delay 500
 	Wend
-	Tap X, Y  //µã»÷½¨Öş
+	Tap X, Y  //ç‚¹å‡»å»ºç­‘
 	Delay 1000
 	
 	Dim intX, intY, res
 	res = FindColor(600,1114, 659, 1132, "FFFFFF", 0, 1.0, intX, intY)
-	//Èç¹ûÃ»ÓĞÕÒµ½£¬intXºÍintYµÄÖµ¶¼»á±»ÖÃÎª-1
+	//å¦‚æœæ²¡æœ‰æ‰¾åˆ°ï¼ŒintXå’ŒintYçš„å€¼éƒ½ä¼šè¢«ç½®ä¸º-1
 	While res > -1
 		Tap 582, 1166
-		Traceprint "Éı¼¶Ò»´Î"
+		Traceprint "å‡çº§ä¸€æ¬¡"
 		Delay 500
 		res = FindColor(600,1114, 659, 1132, "FFFFFF", 0, 1.0, intX, intY)
 	Wend
 	
-	Traceprint "½ğ±Ò²»×ã"
-	Tap 639, 763 //ÍË³öÉı¼¶
+	Traceprint "é‡‘å¸ä¸è¶³"
+	Tap 639, 763 //é€€å‡ºå‡çº§
 	Delay 1000
 End Sub
 
